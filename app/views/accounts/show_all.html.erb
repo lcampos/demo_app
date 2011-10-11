@@ -1,0 +1,20 @@
+show all html page
+
+<span class="heading"><%= @json["records"].length %> accounts matching your search criteria:</span>
+
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC" width="50%">
+<tr bgcolor="#407BA8">
+	<td style="color: #ffffff; font-weight: bold;">Name</td>
+	<td style="color: #ffffff; font-weight: bold;">City</td>
+	<td style="color: #ffffff; font-weight: bold;">State</td>
+	<td style="color: #ffffff; font-weight: bold;">Phone</td>
+</tr>
+<% @json["records"].each do |record| %>
+	<tr style="background:#ffffff" onMouseOver="this.style.background='#eeeeee';" onMouseOut="this.style.background='#ffffff';">
+		<td><a href="/accounts/<%= record["Id"]%>"><%= record["Name"] %></a></td>
+		<td><%= record["BillingCity"] %></td>
+		<td><%= record["BillingState"] %></td>
+		<td><%= record["Phone"] %></td>
+	</tr>
+<% end %>
+</table>

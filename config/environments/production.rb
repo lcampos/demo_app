@@ -1,6 +1,18 @@
 DemoApp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  ENV['full_host'] = "https://partnerprogram.heroku.com"
+  ENV['sfdc_login'] = "https://login.salesforce.com"
+
+  #You setup these in Setup > Development > Remote Access
+  #Set your callback url to https://yourtemplateapp.heroku.com/auth/forcedotcom/callback  
+  ENV['sfdc_consumer_key'] = "3MVG9Oe7T3Ol0ea5IyD_vRQiffzilFchfSDuwzR9S.O7.XUr49a5s9C_tlTUqfBi4St9aVP8F2SC9xESbczRn"
+  ENV['sfdc_consumer_secret'] = "8303684421513603327"
+
+  ENV['sfdc_api_version'] = '21.0'
+
+  ENV['DATABASEDOTCOM_CLIENT_ID'] = ENV['sfdc_consumer_key']
+  ENV['DATABASEDOTCOM_CLIENT_SECRET'] = ENV['sfdc_consumer_secret'] 
   # The production environment is meant for finished, "live" apps.
   # Code is not reloaded between requests
   config.cache_classes = true

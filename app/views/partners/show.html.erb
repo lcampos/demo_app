@@ -1,0 +1,18 @@
+
+<span class="title">Partner Display</span>
+<p/>
+
+<a href="/partners/<%= params[:id] %>/edit">edit this Partner</a><p/>	
+<a href="/partners/index">All Partners</a><p/>
+
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC">
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Name</td>
+		<td bgcolor="#ffffff"><%= @partner["Name"] %></td>
+	</tr>
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">External ID</td>
+		<td bgcolor="#ffffff"><%= @partner["External_ID__c"] %></td>
+	</tr>
+
+</table>
